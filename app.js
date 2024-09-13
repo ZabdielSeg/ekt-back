@@ -23,8 +23,11 @@ app.use(json());
 app.use(urlencoded({ extended: false }));
 
 // Start handling routes
-import indexRoutes from "./routes/user.routes.js";
-app.use("/api/user", indexRoutes);
+import indexRoutes from './routes/index.routes.js';
+app.use("/api", indexRoutes)
+
+import userRoutes from "./routes/user.routes.js";
+app.use("/api/user", userRoutes);
 
 import authRoutes from "./routes/auth.routes.js";
 app.use("/api/auth", authRoutes);
